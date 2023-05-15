@@ -18,6 +18,7 @@ function App() {
             <Form></Form>
           </div>
           <div class="one-half column">
+          <h2>Administra tus citas</h2>
             <Cita nombre="Pipi" dueno="Axel" fechaN="2022" hora="10pm" sintomas="lele pancha"></Cita>
             <Cita nombre="Florcita" dueno="Axel" fechaN="2022" hora="10pm" sintomas="lele pancha"></Cita>
             <Cita nombre="Rocco" dueno="Axel" fechaN="2022" hora="10pm" sintomas="lele pancha"></Cita>
