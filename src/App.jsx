@@ -1,11 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Cita from './../src/Cita.jsx' 
-import Form from './../src/Form.jsx' 
+import Citas from './Citas/Cita'
+import Form from './../src/Form/Form' 
 
 function App() {
+  const [citas, setCitas] = useState([
+    {nombre:"Pipi", dueno:"Axel", fechaN:"2022", hora:"10pm", sintomas:"lele pancha"},
+    {nombre:"Florcita", dueno:"Axel", fechaN:"2022", hora:"10pm", sintomas:"lele pancha"},
+    {nombre:"Rocco", dueno:"Axel", fechaN:"2022", hora:"10pm", sintomas:"lele pancha"},
+    {nombre:"Aniquilador", dueno:"Axel", fechaN:"2022", hora:"10pm", sintomas:"lele pancha"}
+  ])
 
   return (
     <>
@@ -15,15 +19,11 @@ function App() {
         <div class="row">
           <div class="one-half column">
             <h2>Crear mi Cita</h2>
-            <Form></Form>
+            <Form setCitas={setCitas}></Form>
           </div>
           <div class="one-half column">
           <h2>Administra tus citas</h2>
-            <Cita nombre="Pipi" dueno="Axel" fechaN="2022" hora="10pm" sintomas="lele pancha"></Cita>
-            <Cita nombre="Florcita" dueno="Axel" fechaN="2022" hora="10pm" sintomas="lele pancha"></Cita>
-            <Cita nombre="Rocco" dueno="Axel" fechaN="2022" hora="10pm" sintomas="lele pancha"></Cita>
-            <Cita nombre="Aniquilador" dueno="Axel" fechaN="2022" hora="10pm" sintomas="lele pancha"></Cita>
-            
+          <Citas citas={citas}/>
             </div>            
           </div>
         </div>
