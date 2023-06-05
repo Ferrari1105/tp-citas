@@ -10,20 +10,28 @@ function App() {
     {nombre:"Rocco", dueno:"Axel", fechaN:"2022", hora:"10pm", sintomas:"lele pancha"},
     {nombre:"Aniquilador", dueno:"Axel", fechaN:"2022", hora:"10pm", sintomas:"lele pancha"}
   ])
-
+const sumarCita = (Ncita) =>{
+  let newCitas = [...citas]
+  newCitas.push(Ncita)
+  console.log(newCitas)
+  setCitas(newCitas)
+}
   return (
     <>
     <div>
       <h1>ADMINISTRADOR DE PACIENTES</h1>
-      <div class="container">
-        <div class="row">
-          <div class="one-half column">
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
             <h2>Crear mi Cita</h2>
-            <Form setCitas={setCitas}></Form>
+            <Form sumarCita={sumarCita}></Form>
           </div>
-          <div class="one-half column">
+          <div className="one-half column">
           <h2>Administra tus citas</h2>
-          <Citas citas={citas}/>
+          {citas.map((cita, key) => (
+            <Citas cita={cita} key={key}/>
+          ))}
+  
             </div>            
           </div>
         </div>
